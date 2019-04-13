@@ -11,8 +11,8 @@ ___
 <br>
 
 ## [](#header-1)How to
-*  📦  &nbsp; [How to Install Kleeja](https://github.com/awssat/kleeja/wiki/How-to-Install-Kleeja).
-*  💉  &nbsp; [How to update upgrade/update Kleeja](https://github.com/awssat/kleeja/wiki/How-to-update-upgrade-Kleeja).
+*  📦  &nbsp; [How to Install Kleeja](https://github.com/kleeja-official/kleeja/wiki/How-to-Install-Kleeja).
+*  💉  &nbsp; [How to update upgrade/update Kleeja](https://github.com/kleeja-official/kleeja/wiki/How-to-update-upgrade-Kleeja).
 *   🎨  &nbsp; [How to install styles on Kleeja](https://github.com/kleeja-official/kleeja/wiki/How-to-install-styles-on-Kleeja).
 *   🔌  &nbsp; [How to install plugins on Kleeja](https://github.com/kleeja-official/kleeja/wiki/How-to-install-plugins-on-Kleeja).
 *   ℹ️🇺🇸 &nbsp; [Basic Usage - pdf](./How To.pdf).
