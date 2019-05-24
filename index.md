@@ -15,8 +15,7 @@ ___
 *  💉  &nbsp; [How to update upgrade/update Kleeja](https://github.com/kleeja-official/kleeja/wiki/How-to-update-upgrade-Kleeja).
 *   🎨  &nbsp; [How to install styles on Kleeja](https://github.com/kleeja-official/kleeja/wiki/How-to-install-styles-on-Kleeja).
 *   🔌  &nbsp; [How to install plugins on Kleeja](https://github.com/kleeja-official/kleeja/wiki/How-to-install-plugins-on-Kleeja).
-*   ℹ️🇺🇸 &nbsp; [Basic Usage - pdf](./How To.pdf).
-*   ℹ️🇸🇦 &nbsp; [Basic Usage in Arabic - pdf](./تعليمات الإستخدام.pdf).
+*   ℹ️ [Learn more about Kleeja's config.php file](https://github.com/kleeja-official/kleeja/wiki/config.php-file).
 
 
 ___
