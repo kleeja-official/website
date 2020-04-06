@@ -83,3 +83,13 @@ ___
 
 <a href='./screenshot1.png' target="_tab">![screenshot1](./screenshot1.png){:class="img-responsive"}</a>
 <a href='./screenshot2.png' target="_tab">![admin panel](./screenshot2.png){:class="img-responsive"}</a>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-146668487-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-146668487-3');
+</script>
+
