@@ -31,5 +31,8 @@
       "description": "Bug fixes, translations, plugins, styles and documentation are all welcome. Open a pull request and you'll show up here on the next visit.",
       "action": "Open a pull request"
     }
+  },
+  "footer": {
+    "loves": "loves"
   }
 }
