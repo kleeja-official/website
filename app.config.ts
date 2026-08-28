@@ -14,6 +14,7 @@ export default defineAppConfig({
             light: '/images/logo.svg',
             dark: '/images/logo.svg',
             alt: 'Kleeja Logo',
+            class: 'h-10!',
         },
     },
 });
