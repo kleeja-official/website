@@ -16,11 +16,13 @@ definePageMeta({
   layout: 'default',
 })
 
+const { t, locale } = useI18n()
+
 useSeoMeta({
-  title: 'Contributors',
-  description: 'The people who build Kleeja — everyone who has contributed code to the Kleeja repository on GitHub.',
-  ogTitle: 'Kleeja Contributors',
-  ogDescription: 'The people who build Kleeja — everyone who has contributed code to the Kleeja repository on GitHub.',
+  title: () => t('contributors.seo.title'),
+  description: () => t('contributors.seo.description'),
+  ogTitle: () => t('contributors.seo.ogTitle'),
+  ogDescription: () => t('contributors.seo.description'),
 })
 
 // Fetched in the browser so the list stays current on a statically generated
@@ -42,8 +44,12 @@ const totalCommits = computed(() =>
 
 const topContributions = computed(() => contributors.value[0]?.contributions || 1)
 
-const numberFormat = new Intl.NumberFormat('en-US')
-const format = (value: number) => numberFormat.format(value)
+// `-u-nu-latn` keeps Western digits under Arabic, so the counts stay aligned
+// with `tabular-nums` and read the same way in both locales.
+const numberFormat = computed(() =>
+  new Intl.NumberFormat(locale.value === 'ar' ? 'ar-u-nu-latn' : 'en-US'),
+)
+const format = (value: number) => numberFormat.value.format(value)
 
 const share = (person: Contributor) =>
   Math.max(4, Math.round((person.contributions / topContributions.value) * 100))
@@ -70,10 +76,15 @@ const rankStyles: Record<number, { ring: string, badge: string, icon: string, ic
   },
 }
 
+// The trailing arrow points at the reading direction, so it flips under Arabic.
+const forwardArrow = computed(() =>
+  locale.value === 'ar' ? 'i-lucide-arrow-left' : 'i-lucide-arrow-right',
+)
+
 const stats = computed(() => [
-  { label: 'Contributors', value: format(contributors.value.length), icon: 'i-lucide-users' },
-  { label: 'Commits', value: format(totalCommits.value), icon: 'i-lucide-git-commit-horizontal' },
-  { label: 'Since', value: '2007', icon: 'i-lucide-calendar-days' },
+  { label: t('contributors.stats.contributors'), value: format(contributors.value.length), icon: 'i-lucide-users' },
+  { label: t('contributors.stats.commits'), value: format(totalCommits.value), icon: 'i-lucide-git-commit-horizontal' },
+  { label: t('contributors.stats.since'), value: '2007', icon: 'i-lucide-calendar-days' },
 ])
 </script>
 
@@ -86,16 +97,15 @@ const stats = computed(() => [
         icon="i-lucide-heart-handshake"
         size="lg"
       >
-        Open source
+        {{ t('contributors.badge') }}
       </UBadge>
 
       <h1 class="mt-4 text-4xl sm:text-5xl font-bold text-highlighted text-balance">
-        The people behind Kleeja
+        {{ t('contributors.title') }}
       </h1>
 
       <p class="mt-4 text-lg text-muted text-balance">
-        Kleeja is built in the open. Every name below has written code that ships in
-        the release you download — pulled live from GitHub.
+        {{ t('contributors.intro') }}
       </p>
 
       <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
@@ -105,7 +115,7 @@ const stats = computed(() => [
           icon="i-simple-icons-github"
           size="lg"
         >
-          Contribute on GitHub
+          {{ t('contributors.contribute') }}
         </UButton>
 
         <UButton
@@ -116,7 +126,7 @@ const stats = computed(() => [
           icon="i-lucide-circle-dot"
           size="lg"
         >
-          Browse open issues
+          {{ t('contributors.browseIssues') }}
         </UButton>
       </div>
     </div>
@@ -170,9 +180,9 @@ const stats = computed(() => [
       color="error"
       variant="subtle"
       icon="i-lucide-triangle-alert"
-      title="Couldn't load the contributors"
-      :description="`GitHub returned an error${error.statusCode ? ` (${error.statusCode})` : ''}. This is usually the API rate limit — try again in a minute.`"
-      :actions="[{ label: 'Try again', color: 'error', variant: 'outline', onClick: () => refresh() }]"
+      :title="t('contributors.error.title')"
+      :description="t('contributors.error.description', { code: error.statusCode ? ` (${error.statusCode})` : '' })"
+      :actions="[{ label: t('contributors.error.retry'), color: 'error', variant: 'outline', onClick: () => refresh() }]"
     />
 
     <!-- Empty -->
@@ -180,7 +190,7 @@ const stats = computed(() => [
       v-else-if="!contributors.length"
       class="mt-12 text-center text-muted"
     >
-      No contributors to show yet.
+      {{ t('contributors.empty') }}
     </div>
 
     <!-- Contributors -->
@@ -209,7 +219,7 @@ const stats = computed(() => [
           <UIcon
             v-if="rankStyles[index + 1]"
             :name="rankStyles[index + 1]!.icon"
-            class="absolute -top-1 -right-1 size-5 drop-shadow"
+            class="absolute -top-1 -end-1 size-5 drop-shadow"
             :class="rankStyles[index + 1]!.iconColor"
           />
         </div>
@@ -225,12 +235,12 @@ const stats = computed(() => [
               variant="subtle"
               size="sm"
             >
-              bot
+              {{ t('contributors.bot') }}
             </UBadge>
           </div>
 
           <div class="mt-0.5 text-sm text-muted tabular-nums">
-            {{ format(person.contributions) }} {{ person.contributions === 1 ? 'commit' : 'commits' }}
+            {{ t('contributors.commitCount', { count: format(person.contributions) }, person.contributions) }}
           </div>
 
           <div
@@ -245,7 +255,7 @@ const stats = computed(() => [
         </div>
 
         <span
-          class="absolute top-3 right-3 text-xs font-medium tabular-nums rounded-full px-2 py-0.5"
+          class="absolute top-3 end-3 text-xs font-medium tabular-nums rounded-full px-2 py-0.5"
           :class="rankStyles[index + 1]?.badge || 'bg-elevated text-dimmed'"
         >
           #{{ index + 1 }}
@@ -263,11 +273,10 @@ const stats = computed(() => [
         class="size-8 text-primary mx-auto"
       />
       <h2 class="mt-3 text-xl font-semibold text-highlighted">
-        Want your avatar on this page?
+        {{ t('contributors.cta.title') }}
       </h2>
       <p class="mt-2 text-muted max-w-lg mx-auto">
-        Bug fixes, translations, plugins, styles and documentation are all welcome.
-        Open a pull request and you'll show up here on the next visit.
+        {{ t('contributors.cta.description') }}
       </p>
       <UButton
         class="mt-4"
@@ -275,9 +284,9 @@ const stats = computed(() => [
         target="_blank"
         color="neutral"
         variant="outline"
-        trailing-icon="i-lucide-arrow-right"
+        :trailing-icon="forwardArrow"
       >
-        Open a pull request
+        {{ t('contributors.cta.action') }}
       </UButton>
     </div>
   </UContainer>

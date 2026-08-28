@@ -15,3 +15,16 @@
   --color-kleeja-900: oklch(40.0% 0.111 18.74);
   --color-kleeja-950: oklch(26.2% 0.073 19.06);
 }
+
+/* RTL: code is always left-to-right. Without an explicit isolate, the bidi
+   algorithm pulls trailing neutrals (`;`, `()`) of a Latin snippet to the
+   left edge inside Arabic text, so `define('X', true);` renders as
+   `;define('X', true)`. Applies to the config.php options table in particular. */
+[dir='rtl'] :where(code, kbd, samp, pre, .shiki) {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+[dir='rtl'] :where(pre, .shiki) {
+  text-align: left;
+}

@@ -5,6 +5,7 @@ import type { ContentNavigationItem } from '@nuxt/content'
 // `AppHeaderCTA` appended so they stay reachable inside the mobile menu.
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
 
+const { t, localePath } = useDocusI18n()
 const { subNavigationMode } = useSubNavigation()
 
 const contentNavVariants = useUIConfig('contentNavigation')
@@ -17,6 +18,10 @@ const items = computed<ContentNavigationItem[]>(() => {
     path: children?.length ? getFirstPagePath({ ...item, children }) : item.path,
   }))
 })
+
+const extraItems = computed(() => [
+  { label: t('nav.contributors'), icon: 'i-lucide-users', to: localePath('/contributors') },
+])
 </script>
 
 <template>
@@ -35,7 +40,7 @@ const items = computed<ContentNavigationItem[]>(() => {
     <UNavigationMenu
       orientation="vertical"
       variant="link"
-      :items="[{ label: 'Contributors', icon: 'i-lucide-users', to: '/contributors' }]"
+      :items="extraItems"
     />
   </div>
 </template>

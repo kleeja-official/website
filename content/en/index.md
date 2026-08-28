@@ -19,7 +19,7 @@ Trusted by thousands of webmasters since 2007. It's written in PHP, which is ava
   :::u-button
   ---
   size: xl
-  to: /getting-started/installation
+  to: /en/getting-started/installation
   trailing-icon: i-lucide-arrow-right
   ---
   Get started
@@ -63,7 +63,7 @@ Everything you need to get Kleeja installed, updated and extended.
     ---
     icon: i-lucide-package
     title: How to install Kleeja
-    to: /getting-started/installation
+    to: /en/getting-started/installation
     ---
     Upload the files, run the installer and get your upload center online in a few minutes.
     ::::
@@ -72,7 +72,7 @@ Everything you need to get Kleeja installed, updated and extended.
     ---
     icon: i-lucide-arrow-up-circle
     title: How to update or upgrade
-    to: /getting-started/update-upgrade
+    to: /en/getting-started/update-upgrade
     ---
     Move an existing installation to a newer release without losing your files or settings.
     ::::
@@ -81,7 +81,7 @@ Everything you need to get Kleeja installed, updated and extended.
     ---
     icon: i-lucide-palette
     title: How to install styles
-    to: /guides/install-styles
+    to: /en/guides/install-styles
     ---
     Change the look of your upload center by installing a style from the Admin Panel.
     ::::
@@ -90,7 +90,7 @@ Everything you need to get Kleeja installed, updated and extended.
     ---
     icon: i-lucide-plug
     title: How to install plugins
-    to: /guides/install-plugins
+    to: /en/guides/install-plugins
     ---
     Extend Kleeja with plugins for SEO, comments, payments, forum integration and more.
     ::::
@@ -99,7 +99,7 @@ Everything you need to get Kleeja installed, updated and extended.
     ---
     icon: i-lucide-file-cog
     title: The config.php file
-    to: /guides/config-file
+    to: /en/guides/config-file
     ---
     Learn what every option in Kleeja's main configuration file does and when to change it.
     ::::
@@ -108,7 +108,7 @@ Everything you need to get Kleeja installed, updated and extended.
     ---
     icon: i-lucide-book-open
     title: Browse the documentation
-    to: /getting-started/introduction
+    to: /en/getting-started/introduction
     ---
     The documentation collects guides, answers and reference material for every part of Kleeja.
     ::::
@@ -117,7 +117,7 @@ Everything you need to get Kleeja installed, updated and extended.
     ---
     icon: i-lucide-users
     title: Meet the contributors
-    to: /contributors
+    to: /en/contributors
     ---
     Kleeja is open source. See everyone who has written code that ships in the release you download.
     ::::
