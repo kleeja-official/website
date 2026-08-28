@@ -1,0 +1,17 @@
+/* Kleeja brand scale, anchored on #f45b69 at shade 500.
+   `static` is required: these vars are only referenced from the style tag
+   Nuxt UI injects at runtime, so Tailwind can't see the usage and would
+   otherwise tree-shake them away. */
+@theme static {
+  --color-kleeja-50: oklch(97.1% 0.010 10.40);
+  --color-kleeja-100: oklch(94.1% 0.025 10.73);
+  --color-kleeja-200: oklch(89.2% 0.049 11.35);
+  --color-kleeja-300: oklch(82.3% 0.090 12.59);
+  --color-kleeja-400: oklch(74.0% 0.151 15.23);
+  --color-kleeja-500: oklch(67.5% 0.187 18.35); /* #f45b69 */
+  --color-kleeja-600: oklch(60.0% 0.194 20.34);
+  --color-kleeja-700: oklch(52.0% 0.168 20.53);
+  --color-kleeja-800: oklch(44.8% 0.140 19.91);
+  --color-kleeja-900: oklch(40.0% 0.111 18.74);
+  --color-kleeja-950: oklch(26.2% 0.073 19.06);
+}
