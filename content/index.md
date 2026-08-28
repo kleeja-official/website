@@ -112,6 +112,15 @@ Everything you need to get Kleeja installed, updated and extended.
     ---
     The documentation collects guides, answers and reference material for every part of Kleeja.
     ::::
+
+    ::::card
+    ---
+    icon: i-lucide-users
+    title: Meet the contributors
+    to: /contributors
+    ---
+    Kleeja is open source. See everyone who has written code that ships in the release you download.
+    ::::
   :::
 ::
 
