@@ -71,9 +71,8 @@ Everything you need to get Kleeja installed, updated and extended.
     ::::card
     ---
     icon: i-lucide-arrow-up-circle
-    target: _blank
     title: How to update or upgrade
-    to: https://github.com/kleeja-official/kleeja/wiki/How-to-update-upgrade-Kleeja
+    to: /getting-started/update-upgrade
     ---
     Move an existing installation to a newer release without losing your files or settings.
     ::::
@@ -81,9 +80,8 @@ Everything you need to get Kleeja installed, updated and extended.
     ::::card
     ---
     icon: i-lucide-palette
-    target: _blank
     title: How to install styles
-    to: https://github.com/kleeja-official/kleeja/wiki/How-to-install-styles-on-Kleeja
+    to: /guides/install-styles
     ---
     Change the look of your upload center by installing a style from the Admin Panel.
     ::::
@@ -91,9 +89,8 @@ Everything you need to get Kleeja installed, updated and extended.
     ::::card
     ---
     icon: i-lucide-plug
-    target: _blank
     title: How to install plugins
-    to: https://github.com/kleeja-official/kleeja/wiki/How-to-install-plugins-on-Kleeja
+    to: /guides/install-plugins
     ---
     Extend Kleeja with plugins for SEO, comments, payments, forum integration and more.
     ::::
@@ -101,9 +98,8 @@ Everything you need to get Kleeja installed, updated and extended.
     ::::card
     ---
     icon: i-lucide-file-cog
-    target: _blank
     title: The config.php file
-    to: https://github.com/kleeja-official/kleeja/wiki/config.php-file
+    to: /guides/config-file
     ---
     Learn what every option in Kleeja's main configuration file does and when to change it.
     ::::
@@ -111,11 +107,10 @@ Everything you need to get Kleeja installed, updated and extended.
     ::::card
     ---
     icon: i-lucide-book-open
-    target: _blank
-    title: Browse the wiki
-    to: https://github.com/kleeja-official/kleeja/wiki
+    title: Browse the documentation
+    to: /getting-started/introduction
     ---
-    The community wiki collects guides, answers and reference material for every part of Kleeja.
+    The documentation collects guides, answers and reference material for every part of Kleeja.
     ::::
   :::
 ::
