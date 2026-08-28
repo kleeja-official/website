@@ -1,7 +1,4 @@
 export default defineAppConfig({
-    docus: {
-        colorMode: 'light'
-    },
     ui: {
         colors: {
             primary: 'kleeja',
@@ -12,7 +9,7 @@ export default defineAppConfig({
         title: 'Kleeja',
         logo: {
             light: '/images/logo.svg',
-            dark: '/images/logo.svg',
+            dark: '/images/logo-light.svg',
             alt: 'Kleeja Logo',
             class: 'h-10!',
         },
