@@ -1,6 +1,3 @@
-import { writeFile } from 'node:fs/promises'
-import { join } from 'node:path'
-
 // Public origin of the deployed site. GitHub Pages serves it from the custom
 // domain in `public/CNAME`, at the root, so the default `baseURL` of `/` is
 // correct and only the origin needs configuring.
@@ -17,10 +14,22 @@ process.env.NUXT_SITE_URL ||= siteUrl
 export default defineNuxtConfig({
   extends: ['docus'],
 
-  modules: ['@nuxtjs/i18n'],
+  modules: [
+    // Docus forces `strategy: 'prefix'` from its own `config` module, which
+    // buries the default locale under `/en` and turns `/` into a redirect.
+    // Layer modules are installed before the ones listed here, so this runs
+    // after Docus has written the option and before `@nuxtjs/i18n` reads it.
+    // `content.config.ts` mirrors the change by publishing the English pages
+    // at the root of the `docs_en`/`landing_en` collections.
+    (_options, nuxt) => {
+      const options = nuxt.options as typeof nuxt.options & { i18n?: { strategy?: string } }
+      if (options.i18n) {
+        options.i18n.strategy = 'prefix_except_default'
+      }
+    },
+    '@nuxtjs/i18n',
+  ],
 
-  // Docus forces the `prefix` strategy, so every page lives under a locale
-  // segment (`/en/...`, `/ar/...`) and `/` redirects to the default locale.
   // A locale is only registered when `content/<code>/` exists, and the Docus
   // layer merges its own UI translations in on top of these files.
   i18n: {
@@ -44,24 +53,29 @@ export default defineNuxtConfig({
   },
 
   hooks: {
-    // `/` is served by the locale redirect, which Nitro resolves at request
-    // time and never writes to disk — so a static build has no `index.html`
-    // and the bare domain 404s on Pages. Emit the redirect as a real file
-    // once the public assets are in place (the prerenderer leaves it alone).
-    async 'nitro:build:public-assets'(nitro) {
-      const target = `/${defaultLocale}`
-      const html = `<!DOCTYPE html>
-<html lang="${defaultLocale}">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="refresh" content="0; url=${target}">
-<link rel="canonical" href="${siteUrl}${target}">
-<title>Kleeja</title>
-</head>
-<body><a href="${target}">Continue to the Kleeja documentation</a></body>
-</html>
-`
-      await writeFile(join(nitro.options.output.publicDir, 'index.html'), html, 'utf8')
+    // Docus seeds the prerender queue with `/<code>` for every locale. The
+    // default locale has no prefix any more, so `/en` would 404 and `/` — the
+    // entry point the rest of the crawl starts from — would never be visited.
+    'nitro:config'(nitroConfig) {
+      const routes = nitroConfig.prerender?.routes
+      if (!routes) {
+        return
+      }
+
+      const prefixed = routes.indexOf(`/${defaultLocale}`)
+      if (prefixed !== -1) {
+        routes.splice(prefixed, 1)
+      }
+      if (!routes.includes('/')) {
+        routes.push('/')
+      }
+    },
+
+    // Docus registers a route middleware that sends `/` to `/<cookie locale>`.
+    // That is a 404 now that English is served from the root, so drop the
+    // plugin; it does nothing else while i18n is enabled.
+    'app:resolve'(app) {
+      app.plugins = app.plugins.filter(plugin => !/docus[\\/]app[\\/]plugins[\\/]i18n\./.test(plugin.src))
     },
   },
 })
