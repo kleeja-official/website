@@ -71,6 +71,18 @@ export default defineNuxtConfig({
       }
     },
 
+    // `content.config.ts` drops the `en/` segment from the default locale's
+    // document ids so that `path` matches the unprefixed routes — but `stem`
+    // is derived from the same id, and the "Edit this page" link is built from
+    // it. Put the segment back on `stem` only, so the link keeps resolving to
+    // `content/en/...` in the repository. Navigation builds its tree from
+    // `path` and only sorts on `stem`, which a uniform prefix leaves alone.
+    'content:file:afterParse'(ctx) {
+      if (ctx.collection.name.endsWith(`_${defaultLocale}`) && typeof ctx.content.stem === 'string') {
+        ctx.content.stem = `${defaultLocale}/${ctx.content.stem}`
+      }
+    },
+
     // Docus registers a route middleware that sends `/` to `/<cookie locale>`.
     // That is a 404 now that English is served from the root, so drop the
     // plugin; it does nothing else while i18n is enabled.
