@@ -106,6 +106,24 @@ Everything you need to get Kleeja installed, updated and extended.
 
     ::::card
     ---
+    icon: i-lucide-blocks
+    title: Plugin development
+    to: /development/plugin-development
+    ---
+    Build your own plugins: the folder layout, `init.php`, and the hooks core fires while a page runs.
+    ::::
+
+    ::::card
+    ---
+    icon: i-lucide-paintbrush
+    title: Styles development
+    to: /development/styles-development
+    ---
+    Build your own styles: the templates, assets and syntax behind Kleeja's front end.
+    ::::
+
+    ::::card
+    ---
     icon: i-lucide-book-open
     title: Browse the documentation
     to: /getting-started/introduction

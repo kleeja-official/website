@@ -106,6 +106,24 @@ seo:
 
     ::::card
     ---
+    icon: i-lucide-blocks
+    title: تطوير الإضافات
+    to: /ar/development/plugin-development
+    ---
+    ابنِ إضافاتك الخاصة: بنية المجلد، وملف `init.php`، والخطّافات التي تستدعيها النواة أثناء تنفيذ الصفحة.
+    ::::
+
+    ::::card
+    ---
+    icon: i-lucide-paintbrush
+    title: تطوير الستايلات
+    to: /ar/development/styles-development
+    ---
+    ابنِ ستايلاتك الخاصة: القوالب وملفات التصميم والصيغة التي تقوم عليها واجهة كليجا.
+    ::::
+
+    ::::card
+    ---
     icon: i-lucide-book-open
     title: تصفّح التوثيق
     to: /ar/getting-started/introduction
