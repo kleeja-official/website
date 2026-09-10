@@ -21,6 +21,7 @@ const items = computed<ContentNavigationItem[]>(() => {
 
 const extraItems = computed(() => [
   { label: t('nav.documentation'), icon: 'i-lucide-book-open', to: localePath('/getting-started/introduction') },
+  { label: t('nav.plugins'), icon: 'i-lucide-puzzle', to: localePath('/plugins') },
   { label: t('nav.contributors'), icon: 'i-lucide-users', to: localePath('/contributors') },
 ])
 </script>

@@ -1,7 +1,8 @@
 {
   "nav": {
     "documentation": "Documentation",
-    "contributors": "Contributors"
+    "contributors": "Contributors",
+    "plugins": "Plugins"
   },
   "contributors": {
     "seo": {
@@ -31,6 +32,54 @@
       "title": "Want your avatar on this page?",
       "description": "Bug fixes, translations, plugins, styles and documentation are all welcome. Open a pull request and you'll show up here on the next visit.",
       "action": "Open a pull request"
+    }
+  },
+  "plugins": {
+    "seo": {
+      "title": "Plugins & Styles",
+      "description": "The official Kleeja store: free, open source plugins that add features to your upload site, and styles that change how it looks.",
+      "ogTitle": "Kleeja Plugins & Styles"
+    },
+    "badge": "Official store",
+    "title": "Plugins & styles for Kleeja",
+    "intro": "Add features to your upload site with a plugin, or change how it looks with a ready-made style. Everything here is free, open source and maintained by the Kleeja team.",
+    "installGuide": "Installation guide",
+    "submit": "Submit yours",
+    "search": "Search the store",
+    "clear": "Clear search",
+    "reset": "Reset filters",
+    "filters": {
+      "all": "All",
+      "plugin": "Plugins",
+      "style": "Styles"
+    },
+    "stats": {
+      "plugins": "Plugins",
+      "styles": "Styles",
+      "free": "Free"
+    },
+    "type": {
+      "plugin": "Plugin",
+      "style": "Style"
+    },
+    "by": "by {developer}",
+    "compat": "Works with Kleeja",
+    "dependsOn": "Extends {style}",
+    "requiresPlugins": "Needs {plugins}",
+    "download": "Download",
+    "website": "Visit website",
+    "error": {
+      "title": "Couldn't load the store",
+      "description": "GitHub returned an error{code} while fetching the catalogue. Try again in a minute.",
+      "retry": "Try again"
+    },
+    "empty": "Nothing in the store matches your search.",
+    "none": "The store is empty right now.",
+    "cta": {
+      "title": "Downloaded something? Here's how to install it",
+      "description": "Plugins and styles are installed from the Kleeja control panel by uploading the archive you just downloaded — no files to edit by hand.",
+      "plugins": "Installing a plugin",
+      "styles": "Installing a style"
     }
   },
   "footer": {
