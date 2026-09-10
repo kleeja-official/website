@@ -34,6 +34,10 @@ export default defineNuxtConfig({
   // layer merges its own UI translations in on top of these files.
   i18n: {
     defaultLocale,
+    // `@nuxtjs/i18n` enables this by default with `redirectOn: 'root'` and a
+    // `i18n_redirected` cookie, so picking Arabic once pins `/` to `/ar` on
+    // every later visit. The locale is chosen from the URL alone instead.
+    detectBrowserLanguage: false,
     locales: [
       { code: 'en', name: 'English', language: 'en-US', dir: 'ltr', file: 'en.json' },
       { code: 'ar', name: 'العربية', language: 'ar', dir: 'rtl', file: 'ar.json' },
