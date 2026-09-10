@@ -44,6 +44,25 @@ export default defineNuxtConfig({
     ],
   },
 
+  // Plausible is self-hosted, so the script is served from `hiomx.com` while
+  // stats are attributed to `data-domain`. The stub keeps `window.plausible()`
+  // callable before the deferred script has loaded, queueing the calls in
+  // `.q` for it to flush.
+  app: {
+    head: {
+      script: [
+        {
+          src: 'https://plausible.hiomx.com/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js',
+          defer: true,
+          'data-domain': 'kleeja.net',
+        },
+        {
+          innerHTML: 'window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }',
+        },
+      ],
+    },
+  },
+
   // Shiki only bundles the grammars it is told to load. The Docus layer's list
   // has `bash` and `html` but not `php` or `ini`, so those blocks were falling
   // back to unstyled plain text. Layer arrays are concatenated, so these are
