@@ -44,6 +44,20 @@ export default defineNuxtConfig({
     ],
   },
 
+  // Shiki only bundles the grammars it is told to load. The Docus layer's list
+  // has `bash` and `html` but not `php` or `ini`, so those blocks were falling
+  // back to unstyled plain text. Layer arrays are concatenated, so these are
+  // added to the Docus set rather than replacing it.
+  content: {
+    build: {
+      markdown: {
+        highlight: {
+          langs: ['php', 'ini'],
+        },
+      },
+    },
+  },
+
   site: {
     url: siteUrl,
     name: 'Kleeja',
