@@ -1,7 +1,7 @@
 // Public origin of the deployed site. GitHub Pages serves it from the custom
 // domain in `public/CNAME`, at the root, so the default `baseURL` of `/` is
 // correct and only the origin needs configuring.
-const siteUrl = 'https://www.kleeja.net'
+const siteUrl = 'https://kleeja.net'
 
 const defaultLocale = 'en'
 
