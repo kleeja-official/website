@@ -225,8 +225,5 @@
       "description": "Kleeja’s source code is released under the MIT licence, so you are free to use, change and redistribute it. That licence covers the code, not the name or the logos: those identify the project, and the guidelines on this page are what keep them meaning one thing. If your case isn’t covered here, ask — the answer is usually yes.",
       "action": "Open an issue"
     }
-  },
-  "footer": {
-    "loves": "loves"
   }
 }
