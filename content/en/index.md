@@ -31,7 +31,7 @@ Trusted by thousands of webmasters since 2007. It's written in PHP, which is ava
   icon: i-lucide-download
   size: xl
   target: _blank
-  to: https://github.com/kleeja-official/kleeja/releases
+  to: https://github.com/kleeja/kleeja/releases
   variant: outline
   ---
   Download latest
@@ -43,7 +43,7 @@ Trusted by thousands of webmasters since 2007. It's written in PHP, which is ava
   icon: i-simple-icons-github
   size: xl
   target: _blank
-  to: https://github.com/kleeja-official/kleeja
+  to: https://github.com/kleeja/kleeja
   variant: ghost
   ---
   Star on GitHub

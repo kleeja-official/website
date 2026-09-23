@@ -31,7 +31,7 @@ seo:
   icon: i-lucide-download
   size: xl
   target: _blank
-  to: https://github.com/kleeja-official/kleeja/releases
+  to: https://github.com/kleeja/kleeja/releases
   variant: outline
   ---
   حمّل أحدث إصدار
@@ -43,7 +43,7 @@ seo:
   icon: i-simple-icons-github
   size: xl
   target: _blank
-  to: https://github.com/kleeja-official/kleeja
+  to: https://github.com/kleeja/kleeja
   variant: ghost
   ---
   ضع نجمة على GitHub

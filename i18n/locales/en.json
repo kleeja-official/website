@@ -189,7 +189,7 @@
         "long": "Full",
         "oneLineText": "Kleeja is a free, open-source PHP script for running a file upload service on your own hosting.",
         "shortText": "Kleeja is a free, open-source file upload script written in PHP. Install it on your own hosting and any domain — or any folder on it — becomes a complete upload centre with its own users, styles, plugins and Admin Panel.",
-        "longText": "Kleeja is a free and open-source file upload and sharing application written in PHP, used by thousands of webmasters since 2007 and running on almost any hosting that supports PHP and MySQL. Once installed, it turns a domain or a folder on it into a full upload centre: visitors upload files within the limits you set, while file types, sizes, users, abuse reports and storage are all managed from the Admin Panel. Its look is changed by installing a style and its features extended by installing a plugin, both from a store built into the Admin Panel. The source code is released under the MIT licence at github.com/kleeja-official/kleeja."
+        "longText": "Kleeja is a free and open-source file upload and sharing application written in PHP, used by thousands of webmasters since 2007 and running on almost any hosting that supports PHP and MySQL. Once installed, it turns a domain or a folder on it into a full upload centre: visitors upload files within the limits you set, while file types, sizes, users, abuse reports and storage are all managed from the Admin Panel. Its look is changed by installing a style and its features extended by installing a plugin, both from a store built into the Admin Panel. The source code is released under the MIT licence at github.com/kleeja/kleeja."
       }
     },
     "slides": {

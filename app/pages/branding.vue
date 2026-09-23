@@ -2,7 +2,7 @@
 import { useClipboard } from '@vueuse/core'
 
 const SITE_URL = 'https://kleeja.net'
-const REPO_URL = 'https://github.com/kleeja-official/kleeja'
+const REPO_URL = 'https://github.com/kleeja/kleeja'
 
 // Pasted verbatim by whoever credits Kleeja, so both snippets are built from
 // `SITE_URL` rather than repeating the domain in the locale files.

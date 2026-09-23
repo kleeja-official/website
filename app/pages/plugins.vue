@@ -19,11 +19,11 @@ interface CatalogEntry {
   file: { version: string, url: string }
 }
 
-// github.com/kleeja-official/store-catalog — the same catalogue the "Store"
+// github.com/kleeja/store-catalog — the same catalogue the "Store"
 // page inside the Kleeja control panel reads, so this page can never drift
 // from what an admin actually sees offered there.
-const CATALOG_URL = 'https://raw.githubusercontent.com/kleeja-official/store-catalog/refs/heads/main/catalog.json'
-const CATALOG_REPO = 'https://github.com/kleeja-official/store-catalog'
+const CATALOG_URL = 'https://raw.githubusercontent.com/kleeja/store-catalog/refs/heads/main/catalog.json'
+const CATALOG_REPO = 'https://github.com/kleeja/store-catalog'
 
 definePageMeta({
   layout: 'default',

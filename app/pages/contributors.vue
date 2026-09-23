@@ -8,9 +8,9 @@ interface Contributor {
   contributions: number
 }
 
-// github.com/kleeja-official/kleeja — addressed by id so a repo rename can't break it
+// github.com/kleeja/kleeja — addressed by id so a repo rename can't break it
 const CONTRIBUTORS_API = 'https://api.github.com/repositories/116738112/contributors?per_page=100'
-const REPO_URL = 'https://github.com/kleeja-official/kleeja'
+const REPO_URL = 'https://github.com/kleeja/kleeja'
 
 definePageMeta({
   layout: 'default',
