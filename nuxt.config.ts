@@ -82,6 +82,10 @@ export default defineNuxtConfig({
     name: 'Kleeja',
   },
 
+  robots: {
+    autoI18n: false,
+  },
+
   // GitHub Pages only serves static files, so Nitro must emit a fully
   // prerendered site instead of a Node server. The preset also writes the
   // `.nojekyll` marker that stops Pages from dropping `_nuxt/`.
