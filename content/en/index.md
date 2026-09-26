@@ -8,7 +8,7 @@ seo:
 
 ::u-page-hero
 #title
-Run a File Upload Service on your website
+[Run a File Upload Service on your website]{.text-primary}
 
 #description
 Kleeja is the powerful and easiest way to run a file upload service on your website.
@@ -47,6 +47,18 @@ Trusted by thousands of webmasters since 2007. It's written in PHP, which is ava
   variant: ghost
   ---
   Star on GitHub
+  :::
+
+  :::u-button
+  ---
+  color: neutral
+  icon: i-simple-icons-discord
+  size: xl
+  target: _blank
+  to: https://discord.gg/Mp3XVKP
+  variant: ghost
+  ---
+  Join our Discord
   :::
 ::
 

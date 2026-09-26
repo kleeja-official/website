@@ -8,7 +8,7 @@ seo:
 
 ::u-page-hero
 #title
-شغّل خدمة رفع ملفات على موقعك
+[شغّل خدمة رفع ملفات على موقعك]{.text-primary}
 
 #description
 كليجا هو الطريقة الأقوى والأسهل لتشغيل خدمة رفع الملفات على موقعك.
@@ -47,6 +47,18 @@ seo:
   variant: ghost
   ---
   ضع نجمة على GitHub
+  :::
+
+  :::u-button
+  ---
+  color: neutral
+  icon: i-simple-icons-discord
+  size: xl
+  target: _blank
+  to: https://discord.gg/Mp3XVKP
+  variant: ghost
+  ---
+  انضم إلى Discord
   :::
 ::
 
