@@ -8,7 +8,7 @@ seo:
 
 ::u-page-hero
 #title
-Run a File Upload Service on your website
+[Run a File Upload Service on your website]{.text-primary}
 
 #description
 Kleeja is the powerful and easiest way to run a file upload service on your website.
