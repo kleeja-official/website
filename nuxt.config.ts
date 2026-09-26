@@ -5,10 +5,10 @@ const siteUrl = 'https://kleeja.net'
 
 const defaultLocale = 'en'
 
-// The Docus sitemap route resolves the origin from the environment only
-// (`utils/meta.ts` -> `inferSiteURL`), so it never sees `site.url` below and
-// would otherwise emit relative `<loc>` entries. Export it here to keep one
-// source of truth for both.
+// Docus resolves the origin from the environment only (`utils/meta.ts` ->
+// `inferSiteURL`), so it never sees `site.url` below and would otherwise build
+// relative links into `llms.txt`. Export it here to keep one source of truth
+// for both. (`server/routes/sitemap.xml.ts` reads `site.url` directly.)
 process.env.NUXT_SITE_URL ||= siteUrl
 
 export default defineNuxtConfig({
