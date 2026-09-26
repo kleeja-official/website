@@ -3,6 +3,7 @@
     "documentation": "Documentation",
     "contributors": "Contributors",
     "store": "Store",
+    "blog": "Blog",
     "branding": "Branding"
   },
   "contributors": {
@@ -82,6 +83,23 @@
       "plugins": "Installing a plugin",
       "styles": "Installing a style"
     }
+  },
+  "blog": {
+    "seo": {
+      "title": "Blog",
+      "description": "News, releases and announcements from the Kleeja team.",
+      "ogTitle": "Kleeja Blog"
+    },
+    "badge": "Blog",
+    "title": "The Kleeja blog",
+    "intro": "News, releases and announcements from the Kleeja team.",
+    "empty": "No posts yet.",
+    "back": "All posts",
+    "readingTime": "{count} min read",
+    "share": "Share",
+    "shareOn": "Share on {network}",
+    "copyLink": "Copy link",
+    "copied": "Link copied"
   },
   "branding": {
     "seo": {
