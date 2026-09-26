@@ -9,7 +9,7 @@ import { join } from 'pathe'
 // prefix — the page components look documents up by `route.path`, and the
 // navigation, breadcrumbs, surroundings and sitemap all follow from that.
 // Collections are merged by name across layers, with the project winning, so
-// these four replace the Docus ones.
+// the `landing_*` and `docs_*` ones below replace the Docus ones.
 const defaultLocale = 'en'
 const locales = ['en', 'ar']
 
@@ -23,6 +23,18 @@ const docsSchema = z.object({
     to: z.string(),
     target: z.string().optional(),
   })).optional(),
+})
+
+const blogSchema = z.object({
+  date: z.date(),
+  // `github` is the username alone; the profile link and the avatar are both
+  // built from it.
+  author: z.object({
+    name: z.string(),
+    github: z.string(),
+  }),
+  // Path under `public/`, shown above the post and on its card in `/blog`.
+  image: z.string().optional(),
 })
 
 const collections = Object.fromEntries(locales.flatMap((code) => {
@@ -45,9 +57,22 @@ const collections = Object.fromEntries(locales.flatMap((code) => {
         cwd: contentDir,
         include: `${code}/**/*`,
         prefix,
-        exclude: [`${code}/index.md`],
+        exclude: [`${code}/index.md`, `${code}/blog/**`],
       },
       schema: docsSchema,
+    })],
+    // Posts are kept out of `docs_<code>` so they stay out of the docs sidebar
+    // and search, and are rendered by `app/pages/blog/` instead of the Docus
+    // catch-all page. Each translation shares its English file name, so
+    // `en/blog/hello-world.md` and `ar/blog/hello-world.md` are the same post.
+    [`blog_${code}`, defineCollection({
+      type: 'page',
+      source: {
+        cwd: contentDir,
+        include: `${code}/blog/*.md`,
+        prefix: code === defaultLocale ? '/blog' : `/${code}/blog`,
+      },
+      schema: blogSchema,
     })],
   ]
 }))
