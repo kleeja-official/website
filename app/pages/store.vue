@@ -33,10 +33,10 @@ const { t, te, locale } = useI18n()
 const localePath = useLocalePath()
 
 useSeoMeta({
-  title: () => t('plugins.seo.title'),
-  description: () => t('plugins.seo.description'),
-  ogTitle: () => t('plugins.seo.ogTitle'),
-  ogDescription: () => t('plugins.seo.description'),
+  title: () => t('store.seo.title'),
+  description: () => t('store.seo.description'),
+  ogTitle: () => t('store.seo.ogTitle'),
+  ogDescription: () => t('store.seo.description'),
 })
 
 // Fetched in the browser, like the contributors list: the catalogue gains
@@ -81,9 +81,9 @@ const activeFilter = ref<Filter>('all')
 const query = ref('')
 
 const filters = computed(() => ([
-  { value: 'all' as Filter, label: t('plugins.filters.all'), icon: 'i-lucide-layout-grid', count: counts.value.all },
-  { value: 'plugin' as Filter, label: t('plugins.filters.plugin'), icon: 'i-lucide-puzzle', count: counts.value.plugin },
-  { value: 'style' as Filter, label: t('plugins.filters.style'), icon: 'i-lucide-palette', count: counts.value.style },
+  { value: 'all' as Filter, label: t('store.filters.all'), icon: 'i-lucide-layout-grid', count: counts.value.all },
+  { value: 'plugin' as Filter, label: t('store.filters.plugin'), icon: 'i-lucide-puzzle', count: counts.value.plugin },
+  { value: 'style' as Filter, label: t('store.filters.style'), icon: 'i-lucide-palette', count: counts.value.style },
 ]))
 
 // Both languages are searched whichever one the page is being read in, so an
@@ -121,9 +121,9 @@ const metaFor = (type: string) =>
   typeMeta[type as keyof typeof typeMeta] || { icon: 'i-lucide-package', color: 'neutral' as const }
 
 const stats = computed(() => [
-  { label: t('plugins.stats.plugins'), value: counts.value.plugin, icon: 'i-lucide-puzzle' },
-  { label: t('plugins.stats.styles'), value: counts.value.style, icon: 'i-lucide-palette' },
-  { label: t('plugins.stats.free'), value: '100%', icon: 'i-lucide-badge-check' },
+  { label: t('store.stats.plugins'), value: counts.value.plugin, icon: 'i-lucide-puzzle' },
+  { label: t('store.stats.styles'), value: counts.value.style, icon: 'i-lucide-palette' },
+  { label: t('store.stats.free'), value: '100%', icon: 'i-lucide-badge-check' },
 ])
 </script>
 
@@ -136,15 +136,15 @@ const stats = computed(() => [
         icon="i-lucide-store"
         size="lg"
       >
-        {{ t('plugins.badge') }}
+        {{ t('store.badge') }}
       </UBadge>
 
       <h1 class="mt-4 text-4xl sm:text-5xl font-bold text-highlighted text-balance">
-        {{ t('plugins.title') }}
+        {{ t('store.title') }}
       </h1>
 
       <p class="mt-4 text-lg text-muted text-balance">
-        {{ t('plugins.intro') }}
+        {{ t('store.intro') }}
       </p>
 
       <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
@@ -153,7 +153,7 @@ const stats = computed(() => [
           icon="i-lucide-book-open"
           size="lg"
         >
-          {{ t('plugins.installGuide') }}
+          {{ t('store.installGuide') }}
         </UButton>
 
         <UButton
@@ -164,7 +164,7 @@ const stats = computed(() => [
           icon="i-simple-icons-github"
           size="lg"
         >
-          {{ t('plugins.submit') }}
+          {{ t('store.submit') }}
         </UButton>
       </div>
     </div>
@@ -222,9 +222,9 @@ const stats = computed(() => [
       color="error"
       variant="subtle"
       icon="i-lucide-triangle-alert"
-      :title="t('plugins.error.title')"
-      :description="t('plugins.error.description', { code: error.statusCode ? ` (${error.statusCode})` : '' })"
-      :actions="[{ label: t('plugins.error.retry'), color: 'error', variant: 'outline', onClick: () => refresh() }]"
+      :title="t('store.error.title')"
+      :description="t('store.error.description', { code: error.statusCode ? ` (${error.statusCode})` : '' })"
+      :actions="[{ label: t('store.error.retry'), color: 'error', variant: 'outline', onClick: () => refresh() }]"
     />
 
     <template v-else-if="entries.length">
@@ -254,7 +254,7 @@ const stats = computed(() => [
         <UInput
           v-model="query"
           icon="i-lucide-search"
-          :placeholder="t('plugins.search')"
+          :placeholder="t('store.search')"
           class="sm:w-64"
           :ui="{ trailing: 'pe-1' }"
         >
@@ -266,7 +266,7 @@ const stats = computed(() => [
               color="neutral"
               variant="link"
               icon="i-lucide-x"
-              :aria-label="t('plugins.clear')"
+              :aria-label="t('store.clear')"
               @click="query = ''"
             />
           </template>
@@ -283,7 +283,7 @@ const stats = computed(() => [
           class="size-8 text-dimmed mx-auto"
         />
         <p class="mt-3 text-muted">
-          {{ t('plugins.empty') }}
+          {{ t('store.empty') }}
         </p>
         <UButton
           class="mt-4"
@@ -292,7 +292,7 @@ const stats = computed(() => [
           icon="i-lucide-rotate-ccw"
           @click="query = ''; activeFilter = 'all'"
         >
-          {{ t('plugins.reset') }}
+          {{ t('store.reset') }}
         </UButton>
       </div>
 
@@ -329,7 +329,7 @@ const stats = computed(() => [
                 {{ localized(entry.title) }}
               </h3>
               <p class="mt-1 text-xs text-muted truncate">
-                {{ t('plugins.by', { developer: entry.developer }) }}
+                {{ t('store.by', { developer: entry.developer }) }}
               </p>
             </div>
 
@@ -339,7 +339,7 @@ const stats = computed(() => [
               size="sm"
               class="shrink-0"
             >
-              {{ te(`plugins.type.${entry.type}`) ? t(`plugins.type.${entry.type}`) : entry.type }}
+              {{ te(`store.type.${entry.type}`) ? t(`store.type.${entry.type}`) : entry.type }}
             </UBadge>
           </div>
 
@@ -365,7 +365,7 @@ const stats = computed(() => [
                 name="i-lucide-check-circle-2"
                 class="size-3.5"
               />
-              <span>{{ t('plugins.compat') }}</span>
+              <span>{{ t('store.compat') }}</span>
               <span
                 dir="ltr"
                 class="tabular-nums"
@@ -380,7 +380,7 @@ const stats = computed(() => [
                 name="i-lucide-layers"
                 class="size-3.5"
               />
-              {{ t('plugins.dependsOn', { style: entry.depend_on }) }}
+              {{ t('store.dependsOn', { style: entry.depend_on }) }}
             </span>
 
             <span
@@ -391,7 +391,7 @@ const stats = computed(() => [
                 name="i-lucide-link-2"
                 class="size-3.5"
               />
-              {{ t('plugins.requiresPlugins', { plugins: entry.plugins_required }) }}
+              {{ t('store.requiresPlugins', { plugins: entry.plugins_required }) }}
             </span>
           </div>
 
@@ -404,7 +404,7 @@ const stats = computed(() => [
               size="sm"
               class="flex-1 justify-center"
             >
-              {{ t('plugins.download') }}
+              {{ t('store.download') }}
             </UButton>
 
             <UButton
@@ -416,7 +416,7 @@ const stats = computed(() => [
               variant="outline"
               size="sm"
               icon="i-lucide-external-link"
-              :aria-label="t('plugins.website')"
+              :aria-label="t('store.website')"
             />
           </div>
         </div>
@@ -429,10 +429,10 @@ const stats = computed(() => [
           class="size-8 text-primary mx-auto"
         />
         <h2 class="mt-3 text-xl font-semibold text-highlighted">
-          {{ t('plugins.cta.title') }}
+          {{ t('store.cta.title') }}
         </h2>
         <p class="mt-2 text-muted max-w-lg mx-auto">
-          {{ t('plugins.cta.description') }}
+          {{ t('store.cta.description') }}
         </p>
         <div class="mt-4 flex flex-wrap items-center justify-center gap-3">
           <UButton
@@ -441,7 +441,7 @@ const stats = computed(() => [
             variant="outline"
             icon="i-lucide-puzzle"
           >
-            {{ t('plugins.cta.plugins') }}
+            {{ t('store.cta.plugins') }}
           </UButton>
           <UButton
             :to="localePath('/guides/install-styles')"
@@ -449,7 +449,7 @@ const stats = computed(() => [
             variant="outline"
             icon="i-lucide-palette"
           >
-            {{ t('plugins.cta.styles') }}
+            {{ t('store.cta.styles') }}
           </UButton>
         </div>
       </div>
@@ -460,7 +460,7 @@ const stats = computed(() => [
       v-else
       class="mt-12 text-center text-muted"
     >
-      {{ t('plugins.none') }}
+      {{ t('store.none') }}
     </div>
   </UContainer>
 </template>

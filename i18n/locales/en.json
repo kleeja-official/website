@@ -2,7 +2,7 @@
   "nav": {
     "documentation": "Documentation",
     "contributors": "Contributors",
-    "plugins": "Plugins",
+    "store": "Store",
     "branding": "Branding"
   },
   "contributors": {
@@ -35,7 +35,7 @@
       "action": "Open a pull request"
     }
   },
-  "plugins": {
+  "store": {
     "seo": {
       "title": "Plugins & Styles",
       "description": "The official Kleeja store: free, open source plugins that add features to your upload site, and styles that change how it looks.",
