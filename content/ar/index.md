@@ -48,6 +48,18 @@ seo:
   ---
   ضع نجمة على GitHub
   :::
+
+  :::u-button
+  ---
+  color: neutral
+  icon: i-simple-icons-discord
+  size: xl
+  target: _blank
+  to: https://discord.gg/Mp3XVKP
+  variant: ghost
+  ---
+  انضم إلى Discord
+  :::
 ::
 
 ::u-page-section

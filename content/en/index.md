@@ -48,6 +48,18 @@ Trusted by thousands of webmasters since 2007. It's written in PHP, which is ava
   ---
   Star on GitHub
   :::
+
+  :::u-button
+  ---
+  color: neutral
+  icon: i-simple-icons-discord
+  size: xl
+  target: _blank
+  to: https://discord.gg/Mp3XVKP
+  variant: ghost
+  ---
+  Join our Discord
+  :::
 ::
 
 ::u-page-section
